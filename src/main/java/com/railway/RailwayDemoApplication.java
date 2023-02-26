@@ -9,6 +9,7 @@ import org.springframework.boot.web.context.WebServerInitializedEvent;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,9 +26,9 @@ public class RailwayDemoApplication implements ApplicationListener<WebServerInit
 		SpringApplication.run(RailwayDemoApplication.class, args);
 	}
 
-	@PostMapping("/hello")
+	@GetMapping("/hello")
 	public String hello() {
-		return "LiangLinTing";
+		return "LiangLinTing is pig";
 	}
 
 	@Override
